@@ -15,18 +15,18 @@ image_height = bg.height()
 # Set the window size to match the image dimensions
 root.geometry(f"{image_width}x{image_height}")
 
-# Create a canvas widget with background color
-canvas = Canvas(root, width=image_width, height=image_height, bg="#D06F6F")
+# Create a canvas widget
+canvas = Canvas(root, width=image_width, height=image_height, highlightthickness=0)
 canvas.pack()
 
-# Add the image to the canvas
-canvas.create_image(0, 0, anchor=NW, image=bg)
+# Add the background image to the canvas
+canvas.create_image(image_width/2, image_height/2, image=bg)
 
-# Load the button image
+# Load the transparent button image
 button_image = PhotoImage(file="button.png")
 
-# Create a button with the image
-button = Button(canvas, image=button_image, command=button_clicked, bd=0, highlightthickness=0, )
+# Create a button with the transparent image
+button = Button(canvas, image=button_image, command=button_clicked, bd=0, highlightthickness=0, bg="#E7DBDB", activebackground="#E7DBDB")
 button.place(x=263, y=373)
 
 root.mainloop()
