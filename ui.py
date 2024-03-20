@@ -43,6 +43,7 @@ def button_clicked():
     text_label.config(text="Button clicked")
 
 root = Tk()
+root.title("Voice Assistant")
 
 # Load the image
 bg = PhotoImage(file="background.png")
